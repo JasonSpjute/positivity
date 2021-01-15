@@ -1,10 +1,11 @@
+import Post from "./Models/Post.js"
 import { EventEmitter } from './Utils/EventEmitter.js'
 import { isValidProp } from './Utils/isValidProp.js'
 
 class AppState extends EventEmitter {
   user = {}
   account = {}
-  values = []
+  posts = [new Post({URL:'https://upload.wikimedia.org/wikipedia/commons/b/b7/Lueg_im_SWR1_Studio.jpg'})]
 }
 
 export const ProxyState = new Proxy(new AppState(), {

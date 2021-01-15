@@ -10695,4 +10695,11 @@ main {
   flex-grow: 1;
 }
 
+.post {
+  min-height: 25em;
+  min-width: 25em;
+  max-width: 25em;
+  max-height: 25em;
+}
+
 /*# sourceMappingURL=main.css.map */
