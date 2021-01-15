@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>client</title>
+    <title></title>
 </head>
 
 <body>
@@ -20,6 +23,13 @@
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            <form onsubmit="app.postsController.createPost(event)" class="form-inline">
+                <div class="form-group"> 
+                                <input minlength="3" maxlength="50" type="text" class="form-control my-2" name="URL" id="description"
+                                    placeholder="New Post">
+                                <button class="btn btn-success" type="submit">+</button>
+                            </div>
+                        </form>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                 </div>
@@ -29,7 +39,7 @@
     </header>
     <main class="container-fluid">
         <div class="row my-3">
-            <div id="post" class="col-12">>
+            <div id="post" class="col-12">
             </div>
         </div>
     </main>

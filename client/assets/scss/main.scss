@@ -21,6 +21,38 @@ main {
   min-width: 25em;
   max-width: 25em;
   max-height: 25em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+
+.icon{
+  cursor: pointer;
+}
+
+.one{
+color: rgb(7, 175, 7);
+}
+
+.one:hover {
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(22, 230, 22);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(22, 230, 22);
+  box-shadow: 10px 10px 99px 6px rgba(22, 230, 22);
+}
+
+.two{
+  color: rgb(187, 50, 16);
+  }
+
+  
+.two:hover {
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 99px 6px rgba(224, 46, 2);
+  -moz-box-shadow: 10px 10px 99px 6px rgba(224, 46, 2);
+  box-shadow: 10px 10px 99px 6px rgba(224, 46, 2);
+}
+
+.commentFont{
+  font-family: 'Mukta', sans-serif;
+}
 

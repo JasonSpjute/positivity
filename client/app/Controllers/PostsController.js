@@ -19,13 +19,35 @@ export default class PostsController {
     _draw()
   }
 
-  createPost() {
+getPost(id) {
+  try {
+    postsService.getPost(id)
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+  createPost(e) {
+    e.preventDefault()
+    var form = e.target;
+    var post = {
+      URL: form["URL"].target,
+    }
     try {
-      postsService.createPost()
+      postsService.createPost(post)
     } catch (error) {
       console.error(error)
     }
+    form.reset()
    
   }
+
+removePost(id) {
+  try {
+    postsService.deletePost(id)
+  } catch (error) {
+    console.error(error);
+  }
+}
 
 }
