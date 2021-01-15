@@ -10695,4 +10695,42 @@ main {
   flex-grow: 1;
 }
 
+.post {
+  min-height: 25em;
+  min-width: 25em;
+  max-width: 25em;
+  max-height: 25em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.one {
+  color: #07af07;
+}
+
+.one:hover {
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 99px 6px #16e616;
+  -moz-box-shadow: 10px 10px 99px 6px #16e616;
+  box-shadow: 10px 10px 99px 6px #16e616;
+}
+
+.two {
+  color: #bb3210;
+}
+
+.two:hover {
+  border-radius: 50%;
+  -webkit-box-shadow: 10px 10px 99px 6px #e02e02;
+  -moz-box-shadow: 10px 10px 99px 6px #e02e02;
+  box-shadow: 10px 10px 99px 6px #e02e02;
+}
+
+.commentFont {
+  font-family: "Mukta", sans-serif;
+}
+
 /*# sourceMappingURL=main.css.map */
