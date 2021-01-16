@@ -16,11 +16,19 @@ class PostsService {
         return "Post Deleted."
     }
     async edit(body) {
-        const post = await dbContext.Posts.findOneAndUpdate({ _id: body.id, authorId: body.authorId }, body, { new: true }).populate('author', 'name id')
-        if (!post) {
-            throw new BadRequest('You are not the creator, or this is an invalid post.')
+        const post = await dbContext.Posts.findById(body.id)
+        if(body.vote == true){
+            // @ts-ignore
+            post.voteCount ++
+        } else{
+            // @ts-ignore
+            post.voteCount --
         }
-        return post
+        const po = await dbContext.Posts.findByIdAndUpdate(body.id, post, { new: true })
+        if (!post) {
+            throw new BadRequest('you shall not vote! this is an invalid post.')
+        }
+        return po
     }
     async findById(id) {
         const value = await dbContext.Values.findById(id)

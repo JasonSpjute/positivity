@@ -15,12 +15,19 @@ class CommentsService {
     }
 
     async edit(body) {
-        const post = await dbContext.Comments.find({ id: body.id }).populate('author', 'name id')
-
+        const post = await dbContext.Comments.findById(body.id)
+        if(body.vote == true){
+            // @ts-ignore
+            post.voteCount ++
+        } else{
+            // @ts-ignore
+            post.voteCount --
+        }
+        let res = await dbContext.Comments.findByIdAndUpdate(body.id, post, {new: true})
         if (!post) {
             throw new BadRequest("This comment does not exist, or you do not have permission to edit it.")
         }
-        return post
+        return res
     }
 
 }
