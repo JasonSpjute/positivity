@@ -16,6 +16,7 @@ main {
 
 .post {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
 }
 
 .icon {
@@ -46,4 +47,21 @@ main {
 
 .commentFont {
     font-family: 'Mukta', sans-serif;
+}
+
+.header{
+    background-color: #444343;
+}
+
+.font{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2em;
+}
+
+.or{
+    font-family: 'Anton', sans-serif;
+    font-weight: 100;
+    font-size: 4em;
+
+    
 }
