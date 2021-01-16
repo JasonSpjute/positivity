@@ -1,7 +1,7 @@
 const base = window.location.host.includes('localhost') ? '//localhost:3000/' : '/'
 
 export const api = axios.create({
-  baseURL: "http://localhost:3000/api",
-  timeout: 3000,
-  withCredentials: true
+    baseURL: "http://localhost:3000/api",
+    timeout: 3000,
+    withCredentials: true
 })

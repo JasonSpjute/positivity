@@ -4,12 +4,12 @@ import PostsController from "./Controllers/PostsController.js";
 import CommentsController from "./Controllers/CommentController.js";
 
 class App {
-  authController = new AuthController();
-  valuesController = new ValuesController();
+    authController = new AuthController();
+    valuesController = new ValuesController();
 
-  postsController = new PostsController();
+    postsController = new PostsController();
 
-  // commentsController = new CommentsController();
+    commentsController = new CommentsController();
 
 
 }
