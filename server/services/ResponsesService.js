@@ -11,6 +11,13 @@ class ResponsesService {
         return response
     }
 
+    async postInsult(body) {
+        return await dbContext.Insults.create(body)
+    }
+    async postCompliment(body) {
+        return await dbContext.Compliments.create(body)
+    }
+
 }
 
 export const responsesService = new ResponsesService()

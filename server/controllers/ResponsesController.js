@@ -4,10 +4,12 @@ import { responsesService } from "../services/ResponsesService"
 
 export class ResponsesController extends BaseController {
     constructor() {
-        super('api/responses')
+        super('api')
         this.router
-            .get('', this.get)
+            .get('/responses', this.get)
             // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
+            .post('/insults', this.postInsult)
+            .post('/compliments', this.postCompliment)
             .use(Auth0Provider.getAuthorizedUserInfo)
     }
 
@@ -16,6 +18,21 @@ export class ResponsesController extends BaseController {
             return res.send(await responsesService.get())
         } catch (error) {
             next(error)
+        }
+    }
+
+    async postInsult(req, res, next) {
+        try {
+            return res.send(await responsesService.postInsult(req.body))
+        } catch (e) {
+            next(e)
+        }
+    }
+    async postCompliment(req, res, next) {
+        try {
+            return res.send(await responsesService.postCompliment(req.body))
+        } catch (e) {
+            next(e)
         }
     }
 

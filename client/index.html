@@ -21,9 +21,9 @@
         <nav class="navbar navbar-dark navbar-expand bg-dark text-light row">
             <div class="col">
                 <a class="navbar-brand" href="#">
-                    <form onsubmit="app.postsController.createPost(event)" class="form-inline">
+                    <form onsubmit="app.postsController.createPost(event)" id="great-form" class="form-inline">
                         <div id="search" class="form-group" hidden>
-                            <input minlength="3" maxlength="50" type="text" class="form-control my-2" name="URL" id="description" placeholder="Photo URL">
+                            <input form="great-form" minlength="3" maxlength="50" type="text" class="form-control my-2" name="URL" id="description" placeholder="Photo URL">
                             <button class="btn btn-success" type="submit">+</button>
                         </div>
                     </form>
