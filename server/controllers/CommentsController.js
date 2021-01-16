@@ -26,7 +26,8 @@ export class CommentsController extends BaseController {
 
     async edit(req, res, next) {
         try {
-            req.body.userId = req.userInfo.id
+            req.body.authorId = req.userInfo.id
+            req.body.id = req.params.id
             res.send(await commentsService.edit(req.body))
         } catch (e) {
             next(e)
