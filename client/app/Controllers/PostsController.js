@@ -42,7 +42,6 @@ export default class PostsController {
     createPost(e) {
         e.preventDefault()
         var form = e.target;
-        debugger
         var post = {
             URL: form["url"].value
         }
