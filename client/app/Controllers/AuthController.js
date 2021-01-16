@@ -23,6 +23,7 @@ export class AuthController {
   async login() {
     try {
       await AuthService.loginWithPopup();
+      document.getElementById("search").hidden = false
     } catch (e) {
       console.error(e);
     }

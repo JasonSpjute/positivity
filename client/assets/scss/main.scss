@@ -16,6 +16,7 @@ main {
 
 .post {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5%;
 }
 
 .icon {
@@ -48,6 +49,24 @@ main {
     font-family: 'Mukta', sans-serif;
 }
 
+<<<<<<< HEAD
 .card-img-top {
     min-height: 300px;
+=======
+.header{
+    background-color: #444343;
+}
+
+.font{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2em;
+}
+
+.or{
+    font-family: 'Anton', sans-serif;
+    font-weight: 100;
+    font-size: 4em;
+
+    
+>>>>>>> 4841185fdbccf75d444d1574e9bd44296456ee6e
 }
