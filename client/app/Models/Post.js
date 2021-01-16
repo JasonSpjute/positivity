@@ -10,7 +10,7 @@ export default class Post {
             this.insult = responses.insult
             this.compliment = responses.compliment
         }
-        console.log(this.URL)
+
     }
 
     get Template() {
