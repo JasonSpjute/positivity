@@ -17,7 +17,7 @@ export default class Post {
         let template = `<div class="card post">
             <div class="card-header text-right header">
               <i class="far fa-arrow-alt-circle-up fa-3x one icon" onclick=""></i>  
-              <h3 class="d-inline text-white mx-2">${this.voteCount}</h3> 
+              <h3 class="d-inline text-white mx-2 tex-center">${this.voteCount}</h3> 
               <i class="far fa-arrow-alt-circle-down fa-3x two icon" onclick=""></i>
             </div>
             <div class="row">
@@ -27,8 +27,8 @@ export default class Post {
             </div>
             <div class = "col"></div>
             </div>
-          <div class="card-body" id="comments">
-          <button id="mean" type="button" class="btn btn-primary btn-lg btn-block">${this.compliment}</button>
+          <div class="card-body">
+          <button id="mean" type="button" onclick="app.commentController.getComments()" class="btn btn-primary btn-lg btn-block">${this.compliment}</button>
           <div class="text-center or"><b> -OR- </b></div>
       <button type="button" class="btn btn-primary btn-lg btn-block">${this.insult}</button>
           </div>
