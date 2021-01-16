@@ -31,12 +31,20 @@ export default class PostsController {
             console.error(error);
         }
     }
+    vote(inVote, id) {
+        try {
+            postsService.vote(inVote, id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     createPost(e) {
         e.preventDefault()
         var form = e.target;
+        debugger
         var post = {
-            URL: form["URL"].target,
+            URL: form["url"].value
         }
         try {
             postsService.createPost(post)

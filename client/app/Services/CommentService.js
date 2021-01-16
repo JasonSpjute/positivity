@@ -1,7 +1,7 @@
 import { ProxyState } from "../AppState.js";
 import Comment from "../Models/Comment.js";
 import { api } from "./AxiosService.js";
-
+import { postsService } from "../Services/PostsService.js"
 class CommentService {
     async getComments() {
             let res = await api.get("/comments")
@@ -11,9 +11,13 @@ class CommentService {
         //   let res = await api.put("comments" + )
         // }
 
-    // async addComment(newComment) {
-    //   let res = await api.post("/comments" newComment )
-    // }
+    async addComment(comment, id) {
+        let res = await api.post('/comments', {
+            content: comment,
+            postId: id
+        })
+        postsService.getAll()
+    }
     async getComment(id) {
         let res = await api.get("/comments" + id)
         let comment = await ProxyState.comments.find(c => c.id == id)
@@ -24,9 +28,10 @@ class CommentService {
 
     }
     async vote(inVote, id) {
-        console.log(inVote)
         let res = await api.put(`/comments/${id}`, { vote: inVote })
-        console.log(res);
+        ProxyState.posts.find(p => p.id == res.data.postId).comments.find(c => c.id == id).voteCount = res.data.voteCount
+        ProxyState.posts = ProxyState.posts
+        console.log(res.data.voteCount)
     }
 
 

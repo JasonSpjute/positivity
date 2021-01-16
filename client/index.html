@@ -22,9 +22,9 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <form onsubmit="app.postsController.createPost(event)" class="form-inline">
+            <form onsubmit="app.postsController.createPost(event)" id="image-form" class="form-inline">
                 <div class="form-group">
-                    <input minlength="3" maxlength="50" type="text" class="form-control my-2" name="URL" id="description" placeholder="New Post">
+                    <input form="image-form" minlength="3" maxlength="50" type="text" class="form-control my-2" name="url" id="description" placeholder="New Post">
                     <button class="btn btn-success" type="submit">+</button>
                 </div>
             </form>

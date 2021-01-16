@@ -11,31 +11,31 @@ class PostService {
             let posts = []
             for (let i = 0; i < res.data.length; i++) {
                 let ax = await api.get(`/posts/${res.data[i].id}/comments`)
+                let responses = await api.get('/responses')
                 let comments = ax.data.map(c => new Comment(c))
-                posts.push(new Post(res.data[i], comments))
+                posts.push(new Post(res.data[i], comments, responses.data))
             }
             ProxyState.posts = posts
+            console.log(posts);
         } catch (error) {
             console.error(error)
         }
     }
     async deletePost(id) {
         try {
-            // REVIEW does this fail if the api call fails?
             let res = await api.delete("/posts" + id)
             ProxyState.posts = ProxyState.posts.filter(p => p.id != id)
         } catch (error) {
             console.error(error);
         }
     }
-    async createPost(authorId, URL) {
-        try {
-            let res = await api.post("/posts", )
-            ProxyState.posts = [...ProxyState.posts, new Post(res.data)]
-        } catch (error) {
-            console.error(error);
-        }
+    async createPost(post) {
+        let res = await api.post("/posts", post)
+        res.data['authName'] = ProxyState.account.name
+
+        ProxyState.posts = [...ProxyState.posts, new Post(res.data, [])]
     }
+
     async getPost(id) {
         try {
             let res = await api.get("/posts" + id)
@@ -43,6 +43,13 @@ class PostService {
         } catch (error) {
             console.error(error)
         }
+    }
+
+    async vote(inVote, id) {
+        let res = await api.put(`/posts/${id}`, { vote: inVote })
+        ProxyState.posts.find(p => p.id == id).voteCount = res.data.voteCount
+        ProxyState.posts = ProxyState.posts
+
     }
 
 

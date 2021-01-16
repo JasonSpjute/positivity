@@ -25,13 +25,9 @@ export default class CommentsController {
             console.error(error);
         }
     }
-    addComment() {
-        window.event.preventDefault();
-        let newComment = {
-
-        }
+    addComment(comment, id) {
         try {
-            commentService.addComment()
+            commentService.addComment(comment, id)
         } catch (error) {
             console.error(error);
         }
