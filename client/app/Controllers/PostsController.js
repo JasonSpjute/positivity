@@ -43,7 +43,7 @@ export default class PostsController {
         e.preventDefault()
         var form = e.target;
         var post = {
-            URL: form["url"].value
+            URL: form["URL"].value
         }
         try {
             postsService.createPost(post)
